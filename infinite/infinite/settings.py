@@ -136,6 +136,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://final-project-5pqhxc4y4-cipherix.vercel.app",
+    "https://final-project-cipherix.vercel.app",
 ]
 
 # Enforce JWT Authentication Globally
