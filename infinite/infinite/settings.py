@@ -135,7 +135,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    # "https://your-frontend-domain.vercel.app", # Add this once you have your Vercel URL
+    "https://final-project-5pqhxc4y4-cipherix.vercel.app",
 ]
 
 # Enforce JWT Authentication Globally
