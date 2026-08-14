@@ -13,7 +13,8 @@ export const AuthProvider = ({ children }) => {
     const login = async (username, password) => {
         // We use standard axios here instead of our custom 'api' 
         // because we don't have/need a token yet to log in!
-        const response = await axios.post('http://127.0.0.1:8000/api/token/', {
+        const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
+        const response = await axios.post(`${API_URL}/api/token/`, {
             username,
             password
         });
@@ -27,7 +28,8 @@ export const AuthProvider = ({ children }) => {
     };
 
     const register = async (username, password, email, firstName, lastName) => {
-        await axios.post('http://127.0.0.1:8000/api/register/', {
+        const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
+        await axios.post(`${API_URL}/api/register/`, {
             username,
             password,
             email,

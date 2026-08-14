@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
+
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000/api/',
+    baseURL: `${API_URL}/api/`,
 });
 
 // Interceptor 1: Attach token to outgoing requests
@@ -24,7 +26,7 @@ api.interceptors.response.use(
             originalRequest._retry = true;
             try {
                 const refresh = localStorage.getItem('refresh');
-                const res = await axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh });
+                const res = await axios.post(`${API_URL}/api/token/refresh/`, { refresh });
                 
                 // Save the new access token
                 localStorage.setItem('access', res.data.access);
